@@ -1,0 +1,181 @@
+@charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&display=swap');
+
+/*  Reset CSS  */
+* {margin:0; padding:0;}
+ol,ul,li {list-style: none;}
+a {outline:0; text-decoration:none; color:inherit;}
+img {border:0;}
+body {font-family: 'Orbitron', sans-serif; font-size: 16px; color: #555;} 
+
+/* 전체 프레임 */
+#wrap {
+  position: fixed; left: 0; top: 0; 
+  width: 100%;  min-width: 1400px; height: 100%; min-height: 780px;
+  background: url(../img/bg_morning.jpg) no-repeat left top / cover; transition: all 2s;
+}
+#wrap h1 {
+  position: fixed; top: 30px; left: 60px; width: 90px; height: 80px;
+  background: url(../img/logo_b.png) no-repeat; background-size: contain;
+}
+/* 주메뉴 */
+#gnb {
+  position: fixed; top: 50px; right: 200px;
+}
+#gnb li {
+  float: left; margin-left: 30px; font-size: 14px; font-weight: bold;
+}
+#gnb li a {}
+/* sns 버튼 */
+#sns {
+  position: fixed; top: 50px; right: 50px;
+}
+#sns li {
+  float: left; margin-left: 20px;
+}
+#sns li a {
+  display: block; font-size: 18px; transition: .5s;
+}
+/* #sns li a:hover i {transform: scale(1.2);} */
+#sns li a:hover {
+  transform: scale(1.2);
+}
+/* 텍스트 박스 */
+article {
+  position: absolute; top: 350px; left: 150px; width: 450px;
+}
+article p {
+  font-size: 50px; color: #666;
+}
+article p strong {
+  color: #111;
+}
+article em {
+  font-style: normal; font-size: 14px; color: #333;
+}
+/* 모바일 영역 */
+figure {
+  position: absolute; top: 200px; right: -300px; width: 1226px; height: 809px; 
+  background: url(../img/phone_morning.png) no-repeat;
+}
+figure p {
+  overflow: hidden; position: absolute; top: 100px; left: 137px; box-sizing: border-box;
+  width: 540px; height: 307px; padding-left: 50px; font-size: 60px; font-weight: bold; 
+  color: #333; line-height: 4.6; 
+}
+figure p span {
+  position: relative; z-index: 5;
+}
+/* 테마 버튼 */
+nav {
+  position: fixed; bottom: 70px; left: 6%; width: 88%;
+}
+nav ul {}
+nav ul li {
+  float: left; width: 25%;
+}
+nav ul li a {
+  position: relative; z-index: 1;
+  display: block; width: 98%; margin: 0 auto; background: #fff; color: #111;
+  font-size: 12px; line-height: 3; letter-spacing: 3px; opacity: .6; 
+  padding-left: 30px; box-sizing: border-box; transition: .5s;
+}
+nav ul li a:hover,
+nav ul li.on a {
+  background: #111; color: #ddd; opacity: .9;
+}
+/* 배경 구름 */
+#wrap img:nth-of-type(1) {
+  position: absolute; top: 0; left: -1146px; 
+  animation: ani1 110s linear infinite; opacity: 0.8;
+}
+#wrap img:nth-of-type(2) {
+  position: absolute; top: 20px; left: 0; 
+  animation: ani2 100s linear infinite; opacity: 0.8; 
+}
+/* 모바일 구름 */
+figure p img.cl1 {
+  position: absolute; top: 30px; left: -600px;
+  animation: ani3 110s linear infinite;
+  width: 600px; height: auto;
+}
+figure p img.cl2 {
+  position: absolute; top: 20px; left: 0; 
+  animation: ani4 100s linear infinite;
+  width: 700px; height: auto;
+}
+/* 구름 모션 */
+@keyframes ani1 {
+  0% {left: -1146px;}
+  100% {left: 1950px;}
+}
+@keyframes ani2 {
+  0% {left: 0;}
+  50% {left: 1950px; opacity: 0;}
+  50.001% {left: -1840px; opacity: 0.8;}
+}
+/* 모바일 */
+@keyframes ani3 {
+  0% {left: -600px;}
+  100% {left: 1140px;}
+}
+@keyframes ani4 {
+  0% {left: 0;}
+  50% {left: 540px; opacity: 0;}
+  50.001% {left: -700px; opacity: 1;}
+  100% {left: 0;}
+}
+
+/*아침 테마*/
+#wrap.morning {background-image:url(../img/bg_morning.jpg);}
+#wrap.morning h1 {background-image:url(../img/logo_b.png);}
+#wrap.morning #gnb a {color:#555;}
+#wrap.morning #sns i {color:#555;}
+#wrap.morning figure {background-image:url(../img/phone_morning.png);}
+#wrap.morning article p {color:#666;}
+#wrap.morning article p strong {color:#111;}
+#wrap.morning article em {color:#333;}
+#wrap.morning figure p {color:#333;}
+#wrap.morning>img:nth-of-type(1) {opacity:1;}
+#wrap.morning>img:nth-of-type(2) {opacity:1;}
+
+/*오후 테마*/
+#wrap.afternoon {background-image:url(../img/bg_afternoon.jpg);}
+#wrap.afternoon h1 {background-image:url(../img/logo_b.png);}
+#wrap.afternoon #gnb a {color:#555;}
+#wrap.afternoon #sns i {color:#555;}
+#wrap.afternoon figure {background-image:url(../img/phone_afternoon.png);}
+#wrap.afternoon article p {color:#666;}
+#wrap.afternoon article p strong {color:#111;}
+#wrap.afternoon article em {color:#333;}
+#wrap.afternoon figure p {color:#333;}
+#wrap.afternoon>img:nth-of-type(1) {opacity:1;}
+#wrap.afternoon>img:nth-of-type(2) {opacity:1;} 
+
+/*저녁 테마*/
+#wrap.evening {background-image:url(../img/bg_evening.jpg);}
+#wrap.evening h1 {background-image:url(../img/logo_w.png);}
+#wrap.evening #gnb a {color:#fff;}
+#wrap.evening #sns i {color:#fff;}
+#wrap.evening figure {background-image:url(../img/phone_evening.png);}
+#wrap.evening article p {color:#444;}
+#wrap.evening article p strong {color:#fff;}
+#wrap.evening article em {color:#333;}
+#wrap.evening figure p {color:#fff;}
+#wrap.evening>img:nth-of-type(1) {opacity:0.6;}
+#wrap.evening>img:nth-of-type(2) {opacity:0.6;} 
+
+/*밤 테마*/
+#wrap.night {background-image:url(../img/bg_night.jpg);}
+#wrap.night h1 {background-image:url(../img/logo_w.png);}
+#wrap.night #gnb a {color:#fff;}
+#wrap.night #sns i {color:#fff;}
+#wrap.night figure {background-image:url(../img/phone_night.png);}
+#wrap.night article p {color:#bbb;}
+#wrap.night article p strong {color:#fff;}
+#wrap.night article em {color:#888;}
+#wrap.night figure p { color:#fff;}
+#wrap.night>img:nth-of-type(1) {opacity:0.1;}
+#wrap.night>img:nth-of-type(2) {opacity:0.1;}
+#wrap.night figure p img.cl1 {opacity:0.4;}
+#wrap.night figure p img.cl2 {opacity:0.4;}
